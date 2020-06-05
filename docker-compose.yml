@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  app:
+    build: .
+    image: localdevelopment/native-components-typescript:dev
+    volumes:
+      - '.:/app'
+    ports:
+      - '9000:9000'
+    environment:
+      - NODE_ENV=development
+      - NODE_PORT=9000
+      - NPM_CONFIG_LOGLEVEL=info
+    command: ['npm', 'start']
